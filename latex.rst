@@ -9,5 +9,6 @@
 
    manual/index
    note/index
+   devdocs/index
    stdlib/index
 

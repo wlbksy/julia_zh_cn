@@ -34,6 +34,7 @@
    manual/metaprogramming
    manual/arrays
    manual/linear-algebra
+   manual/dates
    manual/networking-and-streams
    manual/parallel-computing
    manual/running-external-programs

@@ -26,6 +26,7 @@
    metaprogramming
    arrays
    linear-algebra
+   dates
    networking-and-streams
    parallel-computing
    running-external-programs

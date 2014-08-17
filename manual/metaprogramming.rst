@@ -1,5 +1,7 @@
 .. _man-metaprogramming:
 
+.. currentmodule:: Base
+
 ********
  元编程
 ********

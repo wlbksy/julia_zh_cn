@@ -26,9 +26,9 @@
    metaprogramming
    arrays
    linear-algebra
-   dates
    networking-and-streams
    parallel-computing
+   dates
    running-external-programs
    calling-c-and-fortran-code
    embedding

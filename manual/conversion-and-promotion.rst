@@ -91,10 +91,10 @@ within the body.
 
 继续 Julia 的 ``Rational`` 类型的案例研究， `rational.jl <https://github.com/JuliaLang/julia/blob/master/base/rational.jl>`_ 中类型转换的声明紧跟在类型声明和构造函数之后： ::
 
-    convert{T<:Int}(::Type{Rational{T}}, x::Rational) = Rational(convert(T,x.num),convert(T,x.den))
-    convert{T<:Int}(::Type{Rational{T}}, x::Int) = Rational(convert(T,x), convert(T,1))
+    convert{T<:Integer}(::Type{Rational{T}}, x::Rational) = Rational(convert(T,x.num),convert(T,x.den))
+    convert{T<:Integer}(::Type{Rational{T}}, x::Integer) = Rational(convert(T,x), convert(T,1))
 
-    function convert{T<:Int}(::Type{Rational{T}}, x::FloatingPoint, tol::Real)
+    function convert{T<:Integer}(::Type{Rational{T}}, x::FloatingPoint, tol::Real)
         if isnan(x); return zero(T)//zero(T); end
         if isinf(x); return sign(x)//zero(T); end
         y = x
@@ -109,10 +109,10 @@ within the body.
             y = 1/y
         end
     end
-    convert{T<:Int}(rt::Type{Rational{T}}, x::FloatingPoint) = convert(rt,x,eps(x))
+    convert{T<:Integer}(rt::Type{Rational{T}}, x::FloatingPoint) = convert(rt,x,eps(x))
 
     convert{T<:FloatingPoint}(::Type{T}, x::Rational) = convert(T,x.num)/convert(T,x.den)
-    convert{T<:Int}(::Type{T}, x::Rational) = div(convert(T,x.num),convert(T,x.den))
+    convert{T<:Integer}(::Type{T}, x::Rational) = div(convert(T,x.num),convert(T,x.den))
 
 
 前四个定义可确保 ``a//b == convert(Rational{Int64}, a/b)`` 。后两个把分数转换为浮点数和整数类型。
